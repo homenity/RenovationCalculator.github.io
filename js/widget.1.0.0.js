@@ -2,7 +2,7 @@
   //global settings
   var pages = new Array(3);
   
-  pages[0] = {
+/*  pages[0] = {
 	    count: 2,
 		question: 'Ready to Budget My Home Repair Project?',
 		title: 'How Much to Renovate',
@@ -11,44 +11,40 @@
 		items: new Array({name: 'Yes', value: 1, page: 2, image: 'yes.gif'},{name: 'No', value: 0, page: 2, image: 'no.gif'})
   };
   
-  pages[1] = {
+  */pages[0] = {
 	    count: 4,
-		question: 'What Project Do You Want to Do?',
-		title: 'How Much to Renovate: Project Selection',
+		question: 'What Project Do You Want to Budget?',
 		type: 'radio',
 		description: "Pick which project you want to budget.  Unfortunately at this point you have to do one at a time, but you can do it as many times as you want.",
 		items: new Array(
 		  {name: 'Bathroom', value: 0, page: -1, image: 'bathroom.gif'},
 		  {name: 'Kitchen', value: 1, page: -1, image: 'kitchen.gif'},
 		  {name: 'Flooring', value: 2, page: 3, image: 'flooring.gif'},
-		  {name: 'Roofing and Windows', value: 3, page: -1, image: 'windows.gif'}
+		  {name: 'Windows', value: 3, page: -1, image: 'windows.gif'}
 		)
   };
 
-  pages[2] = {
+  pages[1] = {
 	    count: 1,
 		question: 'How Many Square Footage Is the Project?',
-		title: 'How Much to Renovate: Basic Information',
 		type: 'input',
 		description: "Try to be as accurate as possible to get the best possible estimate.",
 		items: new Array(
 		  {name: 'squareFootage', value: 0, page: 4, image: 'std.gif'}
 		)
   };
-  pages[3] = {
+  pages[2] = {
 	    count: 1,
 		question: 'What Is Your Zip Code?',
-		title: 'How Much to Renovate: Basic Information',
 		type: 'input',
 		description: "This allows us to give you the best estimate for your area.  If you don't want to tell us, simply leave it blank.",
 		items: new Array(
 		  {name: 'zipCode', value: 0, page: 5, image: 'std.gif'}
 		)
   };
-  pages[4] = {
+  pages[2] = {
 	    count: 1,
 		question: 'How Many Rooms Does Your Project Effect?',
-		title: 'How Much to Renovate: Basic Information',
 		type: 'input',
 		description: "Is it one big room or five small rooms?  This just helps us understand the project a little better. ",
 		items: new Array(
@@ -59,7 +55,6 @@
   pages[5] = {
 	    count: 2,
 		question: 'Are you considering doing this project yourself?',
-		title: 'How Much to Renovate: Do-It-Yourself',
 		type: 'radio',
 		description: "Some people want to take on their home renovation project and get their hands dirty, is this you?  If not and you simply want to know what it would cost to do it yourself click yes and we'll show you both options.",
 		items: new Array({name: 'Yes', value: 1, page: 7, image: 'yes.gif'},{name: 'No', value: 1, page: 8, image: 'no.gif'})
@@ -68,7 +63,6 @@
   pages[6] = {
 	    count: 5,
 		question: 'What is your skill level?',
-		title: 'How Much to Renovate: Skill Level',
 		type: 'radio',
 		description: "If you consider yourself average at home renovation work click a 2.  If you are above average, but have never tried it before click 3.  If you have done this work before but are not great at it, click 4.  If you do this professionally click 5.",
 		items: new Array(
@@ -83,7 +77,6 @@
   pages[7] = {
 	    count: 4,
 		question: 'What Existing Flooring Are We Removing?',
-		title: 'How Much to Renovate: Flooring Removal',
 		type: 'radio',
 		description: "We just want to know what you are taking out to put in the new flooring. ",
 		items: new Array(
@@ -97,7 +90,6 @@
   pages[8] = {
 	    count: 2,
 		question: 'Are We Going to Remove Anything Else?',
-		title: 'How Much to Renovate: Removal',
 		type: 'checkbox',
 		description: "The baseboard and shoe molding are at the base of the wall on the perimeter of the room.  If they are in good shape we would recommend leaving the baseboard and just removing the shoe molding.  Shoe molding usually is not included in rooms with carpet and only with rooms of tile are hardwood.",
 		items: new Array(
@@ -109,7 +101,6 @@
   pages[9] = {
 	    count: 3,
 		question: 'What Type of Flooring Are You Looking to Install?',
-		title: 'How Much to Renovate: Flooring Type',
 		type: 'radio',
 		description: "Flooring is a personal preference, while tile and hardwood are about the same cost typically, carpet is much cheaper.  However, carpet stains easily, wears out quickers, and is harder to clean.  Tile is great is places where the flooring could get wet - basements or bathrooms - but it is cold to the touch.  If you want some options you can always come back and budget the other.",
 		items: new Array(
@@ -122,7 +113,6 @@
   pages[10] = {
 	    count: 3,
 		question: 'How Wide Do You Want the Hardwood Planks?',
-		title: 'How Much to Renovate: Hardwood Width',
 		type: 'radio',
 		description: 'homes all had 2.5", but some modern homes are wider at 3.5" or 4.5" to really accentuate the width and less the length of the board.  The wider boards do cost more money, but are generally of a higher quality.',
 		items: new Array(
@@ -135,7 +125,6 @@
   pages[11] = {
 	    count: 5,
 		question: 'How Nice Do you Want the Hardwood to Be?',
-		title: 'How Much to Renovate: Hardwood Level',
 		type: 'radio',
 		description: "While nice and cost are not always the same thing, they are typically highly related.  For this question we just ask that you give a general idea of how specific you are about the aesthetics.  If you have your heart set on one specific type of wood and color pick 5.  If you have some preference, but are generally okay with most things pick a 3.  If you don't care at all and just something that won't disintegrate into sand pick 1.",
 		items: new Array(
@@ -150,7 +139,6 @@
   pages[12] = {
 	    count: 5,
 		question: 'What size tile do you want installed?',
-		title: 'How Much to Renovate: Tile Size',
 		type: 'radio',
 		description: "The size of the tile largely depends on how you want the tile to look in the room.  If the tile is bigger it can make a small room look smaller, while if it is in a big room, it can make the big room seem not as big.  However, bigger tiles break more easily and are more difficult to install so they do cost more.",
 		items: new Array(
@@ -165,7 +153,6 @@
   pages[13] = {
 	    count: 4,
 		question: 'What type of tile do you want?',
-		title: 'How Much to Renovate: Tile Type',
 		type: 'radio',
 		description: "Ceramic tile is the Honda of tile.  It is cheap and durable, but not always pretty.  Porcelain on the other hand is the Ford that is also reliable, but a little more expensive and better looking.  Natural stone is the best looking, but it stains easily, costs more and is harder to maintain.  I don't know what other you are considering, but we will make a guess for you from our experience.",
 		items: new Array(
@@ -179,7 +166,6 @@
   pages[14] = {
 	    count: 4,
 		question: 'What size grout joint do you want?',
-		title: 'How Much to Renovate: Grout Size',
 		type: 'radio',
 		description: 'We recommend a grout joint of 1/4".  While you can go smaller, the smaller the grout joint the more you will see imperfections in the laying of the tile or in the level nature of your floor.  If you go for no grout, the laying of the tile is incredibly difficult and, as a result more, expensive.  You can always go for a bigger grout joint, but it provides some more difficulty in cleaning and actually adds some cost to the project.',
 		items: new Array(
@@ -193,7 +179,6 @@
   pages[15] = {
 	    count: 3,
 		question: 'Which way do you want to lay the tile?',
-		title: 'How Much to Renovate: Tile Layout',
 		type: 'radio',
 		description: 'Square or offset is simply in a rectangular fashion to the majority of the walls in the room.  Diagonal is typically at a 45 degree angle to the walls and do to the difficult cuts around the exterior costs more do to the added waste.  This added waste is even amplified with a border that requires even more cuts to get the desired look.',
 		items: new Array(
@@ -206,7 +191,6 @@
   pages[16] = {
 	    count: 2,
 		question: 'Do you want to seal the tile?',
-		title: 'How Much to Renovate: Tile Seal',
 		type: 'radio',
 		description: 'Sealing helps protect the tile from stains and moisture absorbing into the grout.  We highly recommend you do it, multiple times, especially if you are going for a light grout color.',
 		items: new Array(
@@ -218,7 +202,6 @@
   pages[17] = {
 	    count: 5,
 		question: 'What kind of carpet do you want?',
-		title: 'How Much to Renovate: Carpet Level',
 		type: 'radio',
 		description: 'While nice and cost are not always the same thing, they are typically highly related. For this question we just ask that you give a general idea of how specific you are about the aesthetics.  If you have your heart set on one specific type of carpet and color pick 5.  If you have some preference, but are generally okay with most things pick a 3.  If you don\'t care at all and just something that won\'t disintegrate into sand, pick 1.',
 		items: new Array(
@@ -233,7 +216,6 @@
   pages[18] = {
 	    count: 2,
 		question: 'Do you want a carpet pad?',
-		title: 'How Much to Renovate: Carpet Pad',
 		type: 'radio',
 		description: 'The carpet pad just helps the carpet be more cushy.  While you can use the one that is currently under any carpet, we recommend you replace it anyway because of potential moisture issues that cold exist in the current pad.',
 		items: new Array(
@@ -245,7 +227,6 @@
   pages[19] = {
 	    count: 3,
 		question: 'Do you want to replace the baseboard and the shoe molding?',
-		title: 'How Much to Renovate: Baseboard Replacement',
 		type: 'radio',
 		description: "As we mentioned before you should keep the baseboard if it looks good, but if you are installing hardwood or tile you should plan on replacing the shoe molding.  It'll be expensive the try and keep the existing.",
 		items: new Array(
@@ -258,7 +239,6 @@
   pages[20] = {
 	    count: 2,
 		question: 'Are you ready to start the project?',
-		title: 'How Much to Renovate: Project Status',
 		type: 'radio',
 		description: "Yes, I want to start this project.  No, I am just budgetting because it is fun and I love this site. ",
 		items: new Array(
